@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 const dotenv = require('dotenv');
+const cors = require('cors');
 const authRoute = require("./routes/auth");
 const userRoute = require("./routes/users");
 const movieRoute = require("./routes/movies");
@@ -21,7 +22,10 @@ mongoose
         app.use("/api/users", userRoute);
         app.use("/api/movies", movieRoute);
         app.use("/api/lists", listRoute);
-
+        app.use(cors({
+            origin: 'https://mern-netflix-frontend.onrender.com'
+          }));
+    
 app.listen(process.env.PORT || 8800 ,()=>{
     console.log("Backend server is running!");
 });
