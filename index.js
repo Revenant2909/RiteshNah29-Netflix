@@ -10,10 +10,10 @@ const listRoute = require("./routes/lists");
 dotenv.config();
 
 app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', 'https://mern-netflix-frontend.onrender.com/');
-    res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
-    res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-    res.header('Access-Control-Allow-Credentials', 'true');
+    res.header(Access-Control-Allow-Origin, "https://mern-netflix-frontend.onrender.com/");
+    res.header(Access-Control-Allow-Methods, GET, POST, PUT, DELETE);
+    res.header(Access-Control-Allow-Headers, Content-Type, Authorization);
+    res.header(Access-Control-Allow-Credentials, true);
     next();
   });
 mongoose
@@ -30,7 +30,7 @@ mongoose
         app.use("/api/movies", movieRoute);
         app.use("/api/lists", listRoute);
         app.use(cors({
-            origin: 'https://mern-netflix-frontend.onrender.com'
+            origin: "https://mern-netflix-frontend.onrender.com/"
           }));
     
 app.listen(process.env.PORT || 8800 ,()=>{
