@@ -9,6 +9,7 @@ const listRoute = require("./routes/lists");
 dotenv.config();
  
 app.use(express.static('build'));
+
 mongoose
         .connect(process.env.MONGO_URL, {
             useNewUrlParser: true,
